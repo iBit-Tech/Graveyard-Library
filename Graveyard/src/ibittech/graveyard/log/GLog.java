@@ -9,6 +9,10 @@ import java.io.PrintWriter;
 
 /**
  * Used for logging console through the console, and makes a new file as well.
+ * Use: on startup (before anything happens), use the deleteLog() method to delete
+ * the old log so a new one can be made. After that, you should use setPrefix() to
+ * set whatever you want your prefix to be (it's javadoc explains it nicely). Then
+ * you should probably use log() is say you've just launched your program.
  * 
  * @author xbony2
  *
@@ -38,6 +42,22 @@ public class GLog {
 	}
 	
 	/**
+	 * Deletes the log automatically created by this class. I recommend doing this on
+	 * startup, so the log doesn't repeat itself again and again.
+	 * 
+	 * @author xbony2
+	 */
+	public static void deleteLog(){
+		File log = new File("log.txt");
+		
+		if(!log.exists()){
+			System.out.println("[" + Graveyard.name + "][ERROR] deleteLog was called, but no log exists!");
+		}else{
+			log.delete();
+		}
+	}
+	
+	/**
 	 * To log ordinary messages, ex a startup phases.
 	 * 
 	 * @param message the message you want to output.
@@ -50,7 +70,7 @@ public class GLog {
 		File log = new File("log.txt");
 	    try{
 	    	if(!log.exists()){
-	         	System.out.println("[" + Graveyard.name + "] We made a new log file.");
+	         	System.out.println("[" + Graveyard.name + "] New log created.");
 	            log.createNewFile();
 	    }
 	    	
@@ -81,7 +101,7 @@ public class GLog {
 		File log = new File("log.txt");
 	    try{
 	    	if(!log.exists()){
-	         	System.out.println("[" + Graveyard.name + "] We made a new log file.");
+	         	System.out.println("[" + Graveyard.name + "] New log created.");
 	            log.createNewFile();
 	    }
 	    	
@@ -108,7 +128,7 @@ public class GLog {
 		File log = new File("log.txt");
 	    try{
 	    	if(!log.exists()){
-	         	System.out.println("[" + Graveyard.name + "] We made a new log file.");
+	         	System.out.println("[" + Graveyard.name + "] New log created.");
 	            log.createNewFile();
 	    }
 	    	
@@ -141,7 +161,7 @@ public class GLog {
 		File log = new File("log.txt");
 	    try{
 	    	if(!log.exists()){
-	         	System.out.println("[" + Graveyard.name + "] We made a new log file.");
+	         	System.out.println("[" + Graveyard.name + "] New log created.");
 	            log.createNewFile();
 	    }
 	    	
