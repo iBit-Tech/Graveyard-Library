@@ -10,7 +10,8 @@ import java.io.PrintWriter;
 /**
  * Used for logging console through the console, and makes a new file as well.
  * Use: on startup (before anything happens), use the deleteLog() method to delete
- * the old log so a new one can be made. After that, you should use setPrefix() to
+ * the old log so a new one can be made. Then, use setDirectory to set the directory
+ * and name of the file (optional). After that, you should use setPrefix() to
  * set whatever you want your prefix to be (it's javadoc explains it nicely). Then
  * you should probably use log() is say you've just launched your program.
  * 
@@ -42,13 +43,36 @@ public class GLog {
 	}
 	
 	/**
+	 * The directory (and name) for the log file.
+	 * 
+	 * @author xbony2
+	 */
+	public static String directory = "log";
+	
+	/**
+	 * Sets the directory and name of the log file.
+	 * 
+	 * @param dir is the file's name and directory. On default, the log file is
+	 * simply "log" which can also be called "src/log" If I wanted to generate
+	 * the log file in this package, I'd input "src/ibittech/graveyard/log/log.
+	 * If I wanted it to have a different extension or name, I can change that 
+	 * as well, ex: "src/ibittech/graveyard/log/logger.txt" will make a file
+	 * named "logger.txt" in this very package.
+	 * 
+	 * @author xbony2
+	 */
+	public static void setDirectory(String dir){
+		directory = dir;
+	}
+	
+	/**
 	 * Deletes the log automatically created by this class. I recommend doing this on
 	 * startup, so the log doesn't repeat itself again and again.
 	 * 
 	 * @author xbony2
 	 */
 	public static void deleteLog(){
-		File log = new File("log.txt");
+		File log = new File(directory);
 		
 		if(!log.exists()){
 			System.out.println("[" + Graveyard.name + "][ERROR] deleteLog was called, but no log exists!");
@@ -67,7 +91,7 @@ public class GLog {
 	public static void log(String message){
 		System.out.println(prefix + " " + message);
 		
-		File log = new File("log.txt");
+		File log = new File(directory);
 	    try{
 	    	if(!log.exists()){
 	         	System.out.println("[" + Graveyard.name + "] New log created.");
@@ -98,7 +122,7 @@ public class GLog {
 	public static void log(String pre, String message){
 		System.out.println("[" + pre + "] " + message);
 		
-		File log = new File("log.txt");
+		File log = new File(directory);
 	    try{
 	    	if(!log.exists()){
 	         	System.out.println("[" + Graveyard.name + "] New log created.");
@@ -125,7 +149,7 @@ public class GLog {
 	public static void logError(String message){
 		System.out.println(prefix + "[ERROR] " + message);
 		
-		File log = new File("log.txt");
+		File log = new File(directory);
 	    try{
 	    	if(!log.exists()){
 	         	System.out.println("[" + Graveyard.name + "] New log created.");
@@ -158,7 +182,7 @@ public class GLog {
 	public static void logError(String pre, String message){
 		System.out.println("[" + pre + "][ERROR] " + message);
 		
-		File log = new File("log.txt");
+		File log = new File(directory);
 	    try{
 	    	if(!log.exists()){
 	         	System.out.println("[" + Graveyard.name + "] New log created.");
