@@ -29,7 +29,7 @@ public class Graveyard {
 	 * 
 	 * @author xbony2
 	 */
-	public static final String fullName = "Graveyard, the multipurpose java library";
+	public static final String fancyName = "Graveyard, the multipurpose java library";
 	
 	/**
 	 * Graveyard's current version.
