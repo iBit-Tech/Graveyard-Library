@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Used for logging console through the console, and makes a new file as well.
@@ -22,32 +24,47 @@ public class GLog {
 	
 	/**
 	 * The prefix.
-	 * 
-	 * @author xbony2
 	 */
-	public String prefix;
+	private String prefix;
+	
+	/**
+	 * List of reserved names
+	 */
+	private static List<String> names = Arrays.asList("Graveyard", "Java");
+	
+	/**
+	 * True if the directory is already set.
+	 */
+	private static boolean isDirectorySet;
+	
+	/**
+	 * The directory (and name) for the log file.
+	 */
+	private static String directory = "log";
 	
 	/**
 	 * Sets your prefix. This should be done on startup.
 	 * 
 	 * @param pref should be something like the name of your Program or an abbreviation, 
 	 * without spaces.
-	 * For example, a Tic Tac Toe program should be "TicTacToe".
-	 * A game named World Of Warcraft should be "WoW".
-	 * A program named Celsus to Kalvin should be "CelsusToKalvin".
+	 * For example, a Tic-Tac-Toe program could be "TicTacToe".
+	 * A game named World Of Warcraft could be "WoW".
+	 * A program named Celsus to Kalvin could be "CelsusToKalvin".
 	 * 
 	 * @author xbony2
 	 */
 	public void setPrefix(String pref){
-		prefix = "[" + pref + "]";
+		if(!pref.equals(null)){
+			boolean isUsed = false;
+			for(int i = 1; i >= names.size(); i++){
+				if(names.get(i) == pref){
+					System.out.println("[" + Graveyard.name + "][ERROR] Prefix name already in use!");
+					isUsed = true;
+				}
+			}
+			if(!isUsed) prefix = "[" + pref + "]";
+		}
 	}
-	
-	/**
-	 * The directory (and name) for the log file.
-	 * 
-	 * @author xbony2
-	 */
-	public static String directory = "log";
 	
 	/**
 	 * Sets the directory and name of the log file.
@@ -62,7 +79,14 @@ public class GLog {
 	 * @author xbony2
 	 */
 	public static void setDirectory(String dir){
-		directory = dir;
+		if(isDirectorySet){
+			System.out.println("[" + Graveyard.name + "][ERROR] Log directory already set!");
+		}else{
+			if(!dir.equals(null)){
+				directory = dir;
+				isDirectorySet = true;
+			}
+		}
 	}
 	
 	/**
@@ -89,21 +113,23 @@ public class GLog {
 	 * @author xbony2
 	 */
 	public void log(String message){
-		System.out.println(prefix + " " + message);
+		if(!message.equals(null)){
+			System.out.println(prefix + " " + message);
 		
-		File log = new File(directory);
-	    try{
-	    	if(!log.exists()){
-	         	System.out.println("[" + Graveyard.name + "] New log created.");
-	            log.createNewFile();
-	    }
+			File log = new File(directory);
+			try{
+				if(!log.exists()){
+					System.out.println("[" + Graveyard.name + "] New log created.");
+					log.createNewFile();
+				}
 	    	
-	    PrintWriter out = new PrintWriter(new FileWriter(log, true));
-	    out.println(prefix + " " + message);
-	    out.close();
-	    }catch(IOException e){
-	        System.out.println("[" + Graveyard.name + "][ERROR] Could not make file!");
-	    }
+				PrintWriter out = new PrintWriter(new FileWriter(log, true));
+				out.println(prefix + " " + message);
+				out.close();
+			}catch(IOException e){
+				System.out.println("[" + Graveyard.name + "][ERROR] Could not make file!");
+			}
+		}
 	}
 	
 	/**
@@ -116,20 +142,22 @@ public class GLog {
 	 * @author xbony2
 	 */
 	public void logError(String message){
-		System.out.println(prefix + "[ERROR] " + message);
+		if(!message.equals(null)){
+			System.out.println(prefix + "[ERROR] " + message);
 		
-		File log = new File(directory);
-	    try{
-	    	if(!log.exists()){
-	         	System.out.println("[" + Graveyard.name + "] New log created.");
-	            log.createNewFile();
-	    }
+			File log = new File(directory);
+			try{
+				if(!log.exists()){
+					System.out.println("[" + Graveyard.name + "] New log created.");
+					log.createNewFile();
+				}
 	    	
-	    PrintWriter out = new PrintWriter(new FileWriter(log, true));
-	    out.println(prefix + "[ERROR] " + message);
-	    out.close();
-	    }catch(IOException e){
-	        System.out.println("[" + Graveyard.name + "][ERROR] Could not make file!");
-	    }
+				PrintWriter out = new PrintWriter(new FileWriter(log, true));
+				out.println(prefix + "[ERROR] " + message);
+				out.close();
+			}catch(IOException e){
+				System.out.println("[" + Graveyard.name + "][ERROR] Could not make file!");
+			}
+		}
 	}
 }
