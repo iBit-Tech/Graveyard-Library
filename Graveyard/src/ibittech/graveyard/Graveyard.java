@@ -1,6 +1,6 @@
 package ibittech.graveyard;
 /**
- * <b>Graveyard</b> is a multipurpose java library with things you might like.
+ * <b>Graveyard</b> is a multipurpose java library with many things you might like.
  * It's licensed under the MIT license, so you can do (almost) whatever you want, use 
  * it for a game, a helpful program, you can print out all the source code and 
  * dance on it (which would be lots of fun I bet). If you are to do anything cool with it,
@@ -10,8 +10,7 @@ package ibittech.graveyard;
  * 
  * Contributers: please use the same indent style as I do when possible. Also, 
  * <b>ALWAYS</b> sign your work, or I'll have to do for you. Be sure to use java 6 as
- * well, do not use java 7 or java 8 features (in fact, java 8 in considered unsupported
- * because it breaks some of the java 6/7 code).
+ * well, do not use java 7 or java 8 features.
  * 
  * @author iBit Tech <small>(<- mostly just xbony2)</small> and contributers.
  */

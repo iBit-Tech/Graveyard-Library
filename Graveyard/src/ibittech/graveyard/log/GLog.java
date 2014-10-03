@@ -60,6 +60,7 @@ public class GLog {
 				if(names.get(i) == pref){
 					System.out.println("[" + Graveyard.name + "][ERROR] Prefix name already in use!");
 					isUsed = true;
+					break;
 				}
 			}
 			if(!isUsed) prefix = "[" + pref + "]";
