@@ -83,7 +83,7 @@ public class GLog {
 	 * 
 	 * @param dir is the file's name and directory. On default, the log file is
 	 * simply "log" which can also be called "src/log" If I wanted to generate
-	 * the log file in this package, I'd input "src/ibittech/graveyard/log/log.
+	 * the log file in this very package, I'd input "src/ibittech/graveyard/log/log.
 	 * If I wanted it to have a different extension or name, I can change that 
 	 * as well, ex: "src/ibittech/graveyard/log/logger.txt" will make a file
 	 * named "logger.txt" in this very package.
@@ -118,6 +118,15 @@ public class GLog {
 	}
 	
 	/**
+	 * @return number of used prefixes, at least two.
+	 * 
+	 * @author xbony2
+	 */
+	public static int getNumberOfUsedPrefixes(){
+		return names.size();
+	}
+	
+	/**
 	 * To log ordinary messages, ex a startup phases.
 	 * 
 	 * @param message the message you want to output.
@@ -141,6 +150,8 @@ public class GLog {
 			}catch(IOException e){
 				System.out.println("[" + Graveyard.name + "][ERROR] Could not make file!");
 			}
+		}else{
+			System.out.println("[" + Graveyard.name + "][ERROR] Message is null!");
 		}
 	}
 	
@@ -170,6 +181,8 @@ public class GLog {
 			}catch(IOException e){
 				System.out.println("[" + Graveyard.name + "][ERROR] Could not make file!");
 			}
+		}else{
+			System.out.println("[" + Graveyard.name + "][ERROR] Message is null!");
 		}
 	}
 }
