@@ -46,7 +46,7 @@ public class GLog {
 	 * Sets your prefix. This should be done on startup.
 	 * 
 	 * @param pref should be something like the name of your Program or an abbreviation, 
-	 * without spaces.
+	 * without spaces, between 2-20 characters.
 	 * For example, a Tic-Tac-Toe program could be "TicTacToe".
 	 * A game named World Of Warcraft could be "WoW".
 	 * A program named Celsus to Kalvin could be "CelsusToKalvin".
@@ -62,6 +62,17 @@ public class GLog {
 					isUsed = true;
 					break;
 				}
+			}
+			boolean isTooLongOrShort = false;
+			if(pref.length() <= 2){
+				isTooLongOrShort = true;
+				System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too short! Attemped name: ");
+				System.out.print(pref);
+			}
+			if(pref.length() >= 20){
+				isTooLongOrShort = true;
+				System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too long! Attemped name: ");
+				System.out.print(pref);
 			}
 			if(!isUsed) prefix = "[" + pref + "]";
 		}
