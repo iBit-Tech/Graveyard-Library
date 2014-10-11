@@ -75,6 +75,8 @@ public class GLog {
 				System.out.print(pref);
 			}
 			if(!isUsed) prefix = "[" + pref + "]";
+		}else{
+			System.out.println("[" + Graveyard.name + "][ERROR] Prefix is null!");
 		}
 	}
 	
@@ -97,6 +99,8 @@ public class GLog {
 			if(!dir.equals(null)){
 				directory = dir;
 				isDirectorySet = true;
+			}else{
+				System.out.println("[" + Graveyard.name + "][ERROR] Directory String is null!");
 			}
 		}
 	}
