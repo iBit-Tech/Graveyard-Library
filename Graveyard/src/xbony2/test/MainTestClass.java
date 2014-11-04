@@ -1,5 +1,6 @@
 package xbony2.test;
 
+import ibittech.graveyard.log.GLog;
 import ibittech.graveyard.system.OperatingSystem;
 
 /**
@@ -11,9 +12,13 @@ import ibittech.graveyard.system.OperatingSystem;
  *
  */
 public class MainTestClass {
+	public static GLog log;
 
 	public static void main(String[] args){
-		System.out.println("HEYO");
+		log.setDirectory("files/log.txt");
+		log = new GLog("Test");
+		log.log("Start up!");
+		log.log("I hope this is working fine!");
 		System.out.println(OperatingSystem.getOs());
 	}
 }
