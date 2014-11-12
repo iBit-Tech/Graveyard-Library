@@ -20,5 +20,6 @@ public class MainTestClass {
 		log.log("Start up!");
 		log.log("I hope this is working fine!");
 		System.out.println(OperatingSystem.getOs());
+		System.out.println(System.getProperty("os.name"));
 	}
 }
