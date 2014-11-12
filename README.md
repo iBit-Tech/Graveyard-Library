@@ -5,4 +5,4 @@ Graveyard-Library
 
 Contributing
 -----------
-TODO: make this section
+When possible, please use the same indent style as the rest of the code. Also, be sure to "sign" yourself, by putting your name under the @author tag for any methods you make. If you're adding to an existing method or class, put a comma after the first author and then put your name.
