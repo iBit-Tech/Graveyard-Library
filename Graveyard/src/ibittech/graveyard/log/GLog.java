@@ -48,7 +48,6 @@ public class GLog {
 					break;
 				}
 			}
-			@SuppressWarnings("unused")
 			boolean isTooLongOrShort = false;
 			if(pref.length() <= 2){
 				isTooLongOrShort = true;
