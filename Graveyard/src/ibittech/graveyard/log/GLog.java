@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Used for logging console through the console, and makes a new file as well.
+ * Used for logging console through the console and a file.
  * Use: on startup (before anything happens), use the deleteLog() method to delete
  * the old log so a new one can be made. Then, use setDirectory to set the directory
  * and name of the file (optional). After that, you should use setPrefix() to
@@ -36,8 +36,8 @@ public class GLog {
 	 */
 	public GLog(String pref){
 		if(isFirst){
-			this.deleteLog();
-			this.isFirst = false;
+			GLog.deleteLog();
+			GLog.isFirst = false;
 		}
 		if(!pref.equals(null)){
 			boolean isUsed = false;
@@ -48,6 +48,7 @@ public class GLog {
 					break;
 				}
 			}
+			@SuppressWarnings("unused")
 			boolean isTooLongOrShort = false;
 			if(pref.length() <= 2){
 				isTooLongOrShort = true;

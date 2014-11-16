@@ -15,7 +15,7 @@ public class MainTestClass {
 	public static GLog log;
 
 	public static void main(String[] args){
-		log.setDirectory("files/log.txt");
+		GLog.setDirectory("files/log.txt");
 		log = new GLog("Test");
 		log.log("Start up!");
 		log.log("I hope this is working fine!");
