@@ -23,6 +23,7 @@ import java.util.List;
  *
  */
 public class GLog {
+
 	/**
 	 * Sets your prefix. This should be done on startup.
 	 * 
@@ -39,30 +40,37 @@ public class GLog {
 			GLog.deleteLog();
 			GLog.isFirst = false;
 		}
-		if(!pref.equals(null)){
-			boolean isUsed = false;
-			for(int i = 1; i >= names.size(); i++){
-				if(names.get(i) == pref){
-					System.out.println("[" + Graveyard.name + "][ERROR] Prefix name already in use!");
-					isUsed = true;
-					break;
-				}
-			}
-			boolean isTooLongOrShort = false;
-			if(pref.length() <= 2){
-				isTooLongOrShort = true;
-				System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too short! Attemped name: ");
-				System.out.print(pref);
-			}
-			if(pref.length() >= 20){
-				isTooLongOrShort = true;
-				System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too long! Attemped name: ");
-				System.out.print(pref);
-			}
-			if(!isUsed) prefix = "[" + pref + "]";
-		}else{
+		
+		if(pref.equals(null)){
 			System.out.println("[" + Graveyard.name + "][ERROR] Prefix is null!");
+			return;
 		}
+		
+		boolean isUsed = false;
+		
+		for(int i = 1; i >= names.size(); i++){
+			if(names.get(i) == pref){
+				System.out.println("[" + Graveyard.name + "][ERROR] Prefix name already in use!");
+				isUsed = true;
+				break;
+			}
+		}
+		
+		boolean isTooLongOrShort = false;
+		if(pref.length() <= 2){
+			isTooLongOrShort = true;
+			System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too short! Attemped name: ");
+			System.out.print(pref);
+		}
+		
+		if(pref.length() >= 20){
+			isTooLongOrShort = true;
+			System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too long! Attemped name: ");
+			System.out.print(pref);
+		}
+		
+		if(!isUsed) prefix = "[" + pref + "]";
+		
 	}
 	
 	/**
@@ -106,12 +114,12 @@ public class GLog {
 		if(isDirectorySet){
 			System.out.println("[" + Graveyard.name + "][ERROR] Log directory already set!");
 		}else{
-			if(!dir.equals(null)){
-				directory = dir;
-				isDirectorySet = true;
-			}else{
+			if(dir.equals(null)){
 				System.out.println("[" + Graveyard.name + "][ERROR] Directory String is null!");
+				return;
 			}
+			directory = dir;
+			isDirectorySet = true;
 		}
 	}
 	
@@ -123,9 +131,9 @@ public class GLog {
 		
 		if(!log.exists()){
 			System.out.println("[" + Graveyard.name + "][ERROR] deleteLog was called, but no log exists!");
-		}else{
-			log.delete();
+			return;
 		}
+		log.delete();	
 	}
 	
 	/**
