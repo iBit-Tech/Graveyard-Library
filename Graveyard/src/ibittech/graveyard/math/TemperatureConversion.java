@@ -22,19 +22,6 @@ public class TemperatureConversion {
 	}
 	
 	/**
-	 * Converts fahrenheit to celsius.
-	 * @param fah the temperature in fahrenheit.
-	 * @return the temperature in celsius.
-	 * 
-	 * @author xbony2
-	 */
-	public static float fahrenheitToCelsius(float fah){
-		fah =- 32;
-		fah = fah * (5/9);
-		return fah;
-	}
-	
-	/**
 	 * Converts fahrenheit to kelvin.
 	 * @param fah the temperature in fahrenheit.
 	 * @return the temperature in kelvin.
@@ -43,19 +30,6 @@ public class TemperatureConversion {
 	 */
 	public static double fanrenheitToKelvin(double fah){
 		fah =+ 459.67;
-		fah = fah * (5/9);
-		return fah;
-	}
-	
-	/**
-	 * Converts fahrenheit to kelvin.
-	 * @param fah the temperature in fahrenheit.
-	 * @return the temperature in kelvin.
-	 * 
-	 * @author xbony2
-	 */
-	public static float fanrenheitToKelvin(float fah){
-		fah =(float) + 459.67;
 		fah = fah * (5/9);
 		return fah;
 	}
@@ -74,19 +48,6 @@ public class TemperatureConversion {
 	}
 	
 	/**
-	 * Converts celsius to fahrenheit.
-	 * @param cel the temperature in celsius.
-	 * @return the temperature in fahrenheit,
-	 * 
-	 * @author xbony2
-	 */
-	public static float celsiusToFahrenheit(float cel){
-		cel = cel * (9/5);
-		cel =+ 32;
-		return cel;
-	}
-	
-	/**
 	 * Converts celsius to kelvin.
 	 * @param cel the temperature in celsius.
 	 * @return the temperature in kelvin.
@@ -94,18 +55,6 @@ public class TemperatureConversion {
 	 * @author xbony2
 	 */
 	public static double celsiusToKelvin(double cel){
-		cel += 273.15;
-		return cel;
-	}
-	
-	/**
-	 * Converts celsius to kelvin.
-	 * @param cel the temperature in celsius.
-	 * @return the temperature in kelvin.
-	 * 
-	 * @author xbony2
-	 */
-	public static float celsiusToKelvin(float cel){
 		cel += 273.15;
 		return cel;
 	}
@@ -124,19 +73,6 @@ public class TemperatureConversion {
 	}
 	
 	/**
-	 * Converts kelvin to fahrenheit.
-	 * @param kelv the temperature in kelvin.
-	 * @return the temperature in fahrenheit.
-	 * 
-	 * @author xbony2
-	 */
-	public static float KelvinToFahrenheit(float kelv){
-		kelv = kelv * (9/5);
-		kelv =(float) - 459.67;
-		return kelv;
-	}
-	
-	/**
 	 * Converts kelvin to celsius.
 	 * @param kelv the temperature in kelvin
 	 * @return the temperature in celsius
@@ -145,18 +81,6 @@ public class TemperatureConversion {
 	 */
 	public static double KelvinToCelsius(double kelv){
 		kelv =- 273.15;
-		return kelv;
-	}
-	
-	/**
-	 * Converts kelvin to celsius.
-	 * @param kelv the temperature in kelvin
-	 * @return the temperature in celsius
-	 * 
-	 * @author xbony2
-	 */
-	public static float KelvinToCelsius(float kelv){
-		kelv =(float) - 273.15;
 		return kelv;
 	}
 }
