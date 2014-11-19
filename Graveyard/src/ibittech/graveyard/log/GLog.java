@@ -41,8 +41,9 @@ public class GLog {
 			GLog.isFirst = false;
 		}
 		
-		if(pref.equals(null)){
+		if(pref == null){
 			System.out.println("[" + Graveyard.name + "][ERROR] Prefix is null!");
+			this.isDisabled = true;
 			return;
 		}
 		
@@ -52,7 +53,8 @@ public class GLog {
 			if(names.get(i) == pref){
 				System.out.println("[" + Graveyard.name + "][ERROR] Prefix name already in use!");
 				isUsed = true;
-				break;
+				this.isDisabled = true;
+				return;
 			}
 		}
 		
@@ -61,12 +63,16 @@ public class GLog {
 			isTooLongOrShort = true;
 			System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too short! Attemped name: ");
 			System.out.print(pref);
+			this.isDisabled = true;
+			return;
 		}
 		
 		if(pref.length() >= 20){
 			isTooLongOrShort = true;
 			System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too long! Attemped name: ");
 			System.out.print(pref);
+			this.isDisabled = true;
+			return;
 		}
 		
 		if(!isUsed) prefix = "[" + pref + "]";
@@ -98,6 +104,8 @@ public class GLog {
 	 */
 	private static String directory = "log";
 	
+	private boolean isDisabled = false;
+	
 	/**
 	 * Sets the directory and name of the log file.
 	 * 
@@ -114,7 +122,7 @@ public class GLog {
 		if(isDirectorySet){
 			System.out.println("[" + Graveyard.name + "][ERROR] Log directory already set!");
 		}else{
-			if(dir.equals(null)){
+			if(dir == null){
 				System.out.println("[" + Graveyard.name + "][ERROR] Directory String is null!");
 				return;
 			}
@@ -153,7 +161,8 @@ public class GLog {
 	 * @author xbony2
 	 */
 	public void log(String message){
-		if(message.equals(null)){
+		if(this.isDisabled) return;
+		if(message == null){
 			System.out.println("[" + Graveyard.name + "][ERROR] Message is null! Caused by: " + this.prefix);
 			return;
 		}
@@ -184,7 +193,8 @@ public class GLog {
 	 * @author xbony2
 	 */
 	public void logError(String message){
-		if(message.equals(null)){
+		if(this.isDisabled) return;
+		if(message == null){
 			System.out.println("[" + Graveyard.name + "][ERROR] Message is null! Caused by: " + this.prefix);
 			return;
 		}

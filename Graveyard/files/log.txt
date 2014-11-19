@@ -1,2 +1,2 @@
-[Test] Start up!
-[Test] I hope this is working fine!
+[Testing] Start up!
+[Testing] I hope this is working fine!

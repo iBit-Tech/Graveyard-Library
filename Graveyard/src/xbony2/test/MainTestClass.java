@@ -16,10 +16,8 @@ public class MainTestClass {
 
 	public static void main(String[] args){
 		GLog.setDirectory("files/log.txt");
-		log = new GLog("Test");
+		log = new GLog("Testing");
 		log.log("Start up!");
 		log.log("I hope this is working fine!");
-		System.out.println(OperatingSystem.getOs());
-		System.out.println(System.getProperty("os.name"));
 	}
 }
