@@ -58,9 +58,7 @@ public class GLog {
 			}
 		}
 		
-		boolean isTooLongOrShort = false;
 		if(pref.length() <= 2){
-			isTooLongOrShort = true;
 			System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too short! Attemped name: ");
 			System.out.print(pref);
 			this.isDisabled = true;
@@ -68,7 +66,6 @@ public class GLog {
 		}
 		
 		if(pref.length() >= 20){
-			isTooLongOrShort = true;
 			System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too long! Attemped name: ");
 			System.out.print(pref);
 			this.isDisabled = true;
