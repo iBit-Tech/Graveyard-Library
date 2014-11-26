@@ -10,14 +10,11 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Used for logging console through the console and a file.
- * Use: on startup (before anything happens), use the deleteLog() method to delete
- * the old log so a new one can be made. Then, use setDirectory to set the directory
- * and name of the file (optional). After that, you should use setPrefix() to
- * set whatever you want your prefix to be (it's javadoc explains it nicely). Then
- * you should probably use log() is say you've just launched your program.
+ * Used to log through both the console and a log file. 
+ * Remember to set the directory/name of the log!
  * 
- * FIXME :JAVADOC IS OUTDATED
+ * It's pretty straight-forward, but feel free to look at
+ * examples in xbony2's test package.
  * 
  * @author xbony2
  *
@@ -59,15 +56,15 @@ public class GLog {
 		}
 		
 		if(pref.length() <= 2){
-			System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too short! Attemped name: ");
+			System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too short! Must be longer then 2 " +
+					"characters! Attemped name: ");
 			System.out.print(pref);
 			this.isDisabled = true;
 			return;
 		}
 		
 		if(pref.length() >= 20){
-			System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too long! Attemped name: ");
-			System.out.print(pref);
+			System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too long! Must be under 20 characters!");
 			this.isDisabled = true;
 			return;
 		}
@@ -82,7 +79,7 @@ public class GLog {
 	private String prefix;
 	
 	/**
-	 * List of reserved names
+	 * List of reserved names.
 	 */
 	private static List<String> names = Arrays.asList("Graveyard", "Java");
 	
@@ -92,7 +89,7 @@ public class GLog {
 	private static boolean isDirectorySet;
 	
 	/**
-	 * True if this is the first prefix made
+	 * True if this is the first prefix made.
 	 */
 	private static boolean isFirst = true;
 	
@@ -151,7 +148,7 @@ public class GLog {
 	}
 	
 	/**
-	 * To log ordinary messages, ex a startup phases.
+	 * To log ordinary messages, EX. a startup phases.
 	 * 
 	 * @param message the message you want to output.
 	 * 
@@ -168,7 +165,7 @@ public class GLog {
 		File log = new File(directory);
 		try{
 			if(!log.exists()){
-				System.out.println("[" + Graveyard.name + "] New log created.");
+				System.out.println("[" + Graveyard.name + "] New log being created.");
 				log.createNewFile();
 			}
 	    	
@@ -177,6 +174,7 @@ public class GLog {
 			out.close();
 		}catch(IOException e){
 			System.out.println("[" + Graveyard.name + "][ERROR] Could not make file!");
+			e.printStackTrace();
 		}
 	}
 	
@@ -200,7 +198,7 @@ public class GLog {
 		File log = new File(directory);
 		try{
 			if(!log.exists()){
-				System.out.println("[" + Graveyard.name + "] New log created.");
+				System.out.println("[" + Graveyard.name + "] New log being created.");
 				log.createNewFile();
 			}
 	    	
@@ -209,6 +207,7 @@ public class GLog {
 			out.close();
 		}catch(IOException e){
 			System.out.println("[" + Graveyard.name + "][ERROR] Could not make file!");
+			e.printStackTrace();
 		}
 	}
 }
