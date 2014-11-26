@@ -1,7 +1,7 @@
 Graveyard-Library
 =================
 
-**Graveyard** is a multpurpose java library created by xbony2 at iBit-Tech. It's licensed under the MIT license, so feel free to use for a game, a program, whatever! If are to use it for anything extra special though, please alert xbony2, he's happy to hear what you've made! :D
+**Graveyard** is a multipurpose java library created by xbony2 at iBit-Tech. It's licensed under the MIT license, so feel free to use for a game, a program, whatever! If are to use it for anything extra special though, please alert xbony2, he's happy to hear what you've created! :D
 
 Contributing
 -----------
@@ -9,4 +9,4 @@ When possible, please use the same indent style as the rest of the code. Also, b
 
 If a pull request meets that criteria, I'll probably accept it :) I'm not going to leave you hanging like some other repository owners do, I'll either merge it or not merge it when possible. 
 
-Recommended IDE: eclipse. If you use another IDE, please don't include any of it's auto-generated files in your PR :P The .gitignore should handle most of the major ones though.
+Recommended IDE: eclipse. If you use another IDE, please don't include any of it's auto-generated files in your pull request :P The .gitignore should handle most of the major IDEs (IntelJ, Netbeans, etc), but if I forgot anything feel free to add it.
