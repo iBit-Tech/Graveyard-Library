@@ -1,0 +1,15 @@
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.6
+version = newGraveyardVersion
+
+repositories {
+	mavenCentral()
+}
+
+jar {
+	manifest {
+		attributes 'Implementation-Title': 'Graveyard',
+				   'Implementation-Version': version
+	}
+}
