@@ -10,3 +10,8 @@ When possible, please use the same indent style as the rest of the code. Also, b
 If a pull request meets that criteria, I'll probably accept it :) I'm not going to leave you hanging like some other repository owners do, I'll either merge it or not merge it when possible. 
 
 Recommended IDE: eclipse. If you use another IDE, please don't include any of it's auto-generated files in your pull request :P The .gitignore should handle most of the major IDEs (IntelJ, Netbeans, etc), but if I forgot anything feel free to add it.
+
+Building
+-----------
+Unless you're an owner, you don't need to read this. 
+TODO: setup Gradle. 
