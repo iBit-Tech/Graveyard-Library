@@ -14,4 +14,9 @@ Recommended IDE: eclipse. If you use another IDE, please don't include any of it
 Building
 -----------
 Unless you're an owner, you don't need to read this. 
-TODO: setup Gradle. 
+
+*Mac OS X/Linux*
+
+1. Open up terminal and use "cd" to go to the directory where graveyard is. 
+2. Type "./gradle build"
+3. Profit.
