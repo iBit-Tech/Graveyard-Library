@@ -5,6 +5,8 @@ Graveyard-Library
 
 Contributing
 -----------
+I'd love to see people contributing to make things stable and useful :)
+
 When possible, please use the same indent style as the rest of the code. Also, be sure to "sign" yourself, by putting your name under the @author tag for any methods you make. If you're adding to an existing method or class, put a comma after the first author and then put your name. If you don't "sign" yourself, someone might sign their self and take credit! Additionly, please only use Java 6. I will not accept any pull requests that use Java 7/8 features.
 
 If a pull request meets that criteria, I'll probably accept it :) I'm not going to leave you hanging like some other repository owners do, I'll either merge it or not merge it when possible. 
@@ -13,10 +15,10 @@ Recommended IDE: eclipse. If you use another IDE, please don't include any of it
 
 Building
 -----------
-Unless you're an owner, you don't need to read this. 
+Unless you're an owner, you don't need to read this. Basically, we use gradle. 
 
 *Mac OS X/Linux*
 
 1. Open up terminal and use "cd" to go to the directory where graveyard is. 
 2. Type "./gradle build"
-3. Profit.
+3. That's it! Yay for gradle! 
