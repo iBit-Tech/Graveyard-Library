@@ -21,14 +21,14 @@ public class Graveyard {
 	 * 
 	 * @author xbony2
 	 */
-	public static final String name = "Graveyard";
+	public static final String NAME = "Graveyard";
 	
 	/**
 	 * Graveyard's extended name with a small description
 	 * 
 	 * @author xbony2
 	 */
-	public static final String fancyName = "Graveyard, the multipurpose java library";
+	public static final String FANCYNAME = "Graveyard, the multipurpose java library";
 	
 	/**
 	 * Graveyard's current version.
@@ -48,6 +48,6 @@ public class Graveyard {
 	 * 
 	 * @author xbony2
 	 */
-	public static final String version = "v1.0.0a";
+	public static final String VERSION = "v1.0.0a";
 	
 }

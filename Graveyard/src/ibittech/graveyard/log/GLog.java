@@ -39,7 +39,7 @@ public class GLog {
 		}
 		
 		if(pref == null){
-			System.out.println("[" + Graveyard.name + "][ERROR] Prefix is null!");
+			System.out.println("[" + Graveyard.NAME + "][ERROR] Prefix is null!");
 			this.isDisabled = true;
 			return;
 		}
@@ -48,7 +48,7 @@ public class GLog {
 		
 		for(int i = 1; i >= names.size(); i++){
 			if(names.get(i) == pref){
-				System.out.println("[" + Graveyard.name + "][ERROR] Prefix name already in use!");
+				System.out.println("[" + Graveyard.NAME + "][ERROR] Prefix name already in use!");
 				isUsed = true;
 				this.isDisabled = true;
 				return;
@@ -56,7 +56,7 @@ public class GLog {
 		}
 		
 		if(pref.length() <= 2){
-			System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too short! Must be longer then 2 " +
+			System.out.println("[" + Graveyard.NAME + "][ERROR] Prefix name is too short! Must be longer then 2 " +
 					"characters! Attemped name: ");
 			System.out.print(pref);
 			this.isDisabled = true;
@@ -64,7 +64,7 @@ public class GLog {
 		}
 		
 		if(pref.length() >= 20){
-			System.out.println("[" + Graveyard.name + "][ERROR] Prefix name is too long! Must be under 20 characters!");
+			System.out.println("[" + Graveyard.NAME + "][ERROR] Prefix name is too long! Must be under 20 characters!");
 			this.isDisabled = true;
 			return;
 		}
@@ -114,10 +114,10 @@ public class GLog {
 	 */
 	public static void setDirectory(String dir){
 		if(isDirectorySet){
-			System.out.println("[" + Graveyard.name + "][ERROR] Log directory already set!");
+			System.out.println("[" + Graveyard.NAME + "][ERROR] Log directory already set!");
 		}else{
 			if(dir == null){
-				System.out.println("[" + Graveyard.name + "][ERROR] Directory String is null!");
+				System.out.println("[" + Graveyard.NAME + "][ERROR] Directory String is null!");
 				return;
 			}
 			directory = dir;
@@ -132,7 +132,7 @@ public class GLog {
 		File log = new File(directory);
 		
 		if(!log.exists()){
-			System.out.println("[" + Graveyard.name + "][ERROR] deleteLog was called, but no log exists!");
+			System.out.println("[" + Graveyard.NAME + "][ERROR] deleteLog was called, but no log exists!");
 			return;
 		}
 		log.delete();	
@@ -157,7 +157,7 @@ public class GLog {
 	public void log(String message){
 		if(this.isDisabled) return;
 		if(message == null){
-			System.out.println("[" + Graveyard.name + "][ERROR] Message is null! Caused by: " + this.prefix);
+			System.out.println("[" + Graveyard.NAME + "][ERROR] Message is null! Caused by: " + this.prefix);
 			return;
 		}
 		System.out.println(prefix + " " + message);
@@ -165,7 +165,7 @@ public class GLog {
 		File log = new File(directory);
 		try{
 			if(!log.exists()){
-				System.out.println("[" + Graveyard.name + "] New log being created.");
+				System.out.println("[" + Graveyard.NAME + "] New log being created.");
 				log.createNewFile();
 			}
 	    	
@@ -173,7 +173,7 @@ public class GLog {
 			out.println(prefix + " " + message);
 			out.close();
 		}catch(IOException e){
-			System.out.println("[" + Graveyard.name + "][ERROR] Could not make file!");
+			System.out.println("[" + Graveyard.NAME + "][ERROR] Could not make file!");
 			e.printStackTrace();
 		}
 	}
@@ -190,7 +190,7 @@ public class GLog {
 	public void logError(String message){
 		if(this.isDisabled) return;
 		if(message == null){
-			System.out.println("[" + Graveyard.name + "][ERROR] Message is null! Caused by: " + this.prefix);
+			System.out.println("[" + Graveyard.NAME + "][ERROR] Message is null! Caused by: " + this.prefix);
 			return;
 		}
 		System.out.println(prefix + "[ERROR] " + message);
@@ -198,7 +198,7 @@ public class GLog {
 		File log = new File(directory);
 		try{
 			if(!log.exists()){
-				System.out.println("[" + Graveyard.name + "] New log being created.");
+				System.out.println("[" + Graveyard.NAME + "] New log being created.");
 				log.createNewFile();
 			}
 	    	
@@ -206,7 +206,7 @@ public class GLog {
 			out.println(prefix + "[ERROR] " + message);
 			out.close();
 		}catch(IOException e){
-			System.out.println("[" + Graveyard.name + "][ERROR] Could not make file!");
+			System.out.println("[" + Graveyard.NAME + "][ERROR] Could not make file!");
 			e.printStackTrace();
 		}
 	}
