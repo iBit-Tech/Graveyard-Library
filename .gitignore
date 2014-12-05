@@ -17,6 +17,9 @@ hs_err_pid*
 # Windows
 Thumbs.db
 
+# Eclipse
+Graveyard/.gitignore
+
 # Xcode files
 build/
 *.pbxuser
